@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ssm-news/ssm-news.iml" filepath="$PROJECT_DIR$/ssm-news/ssm-news.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm-smbms/ssm-smbms.iml" filepath="$PROJECT_DIR$/ssm-smbms/ssm-smbms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm-test.iml" filepath="$PROJECT_DIR$/ssm-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tms/tms.iml" filepath="$PROJECT_DIR$/tms/tms.iml" />
+    </modules>
+  </component>
+</project>

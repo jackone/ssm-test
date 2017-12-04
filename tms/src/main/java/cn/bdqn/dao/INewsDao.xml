@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bdqn.dao.INewsDao">
+    <!--查询记录数-->
+    <select id="selectCount" resultType="int">
+        SELECT count(1) from news_information
+        <where>
+            <if test="columntype!=null and ''!=columntype">
+                and columntype =#{columntype}
+            </if>
+            <if test="title!=null and ''!=title">
+                and title like concat ('%',#{title},'%')
+            </if>
+        </where>
+    </select>
+    <!--分页查询news集合-->
+    <select id="selectAllNewsByPage" resultType="news">
+        SELECT * from `news_information`
+        <where>
+            <if test="news.columntype!=null and ''!=news.columntype">
+                and columntype =#{news.columntype}
+            </if>
+            <if test="news.title!=null and ''!=news.title">
+                and title like concat ('%',#{news.title},'%')
+            </if>
+        </where>
+        limit #{pageIndex} ,#{pageSize}
+    </select>
+</mapper>

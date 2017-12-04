@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bdqn.dao.ISmbms_UserDao">
+    <!--用户登录-->
+    <select id="selectLogin" resultType="smbms_User">
+        select * from smbms_user where userCode=#{userCode} and userPassword=#{userPassword}
+    </select>
+<!--查询记录数-->
+    <select id="selectCount" resultType="int">
+        SELECT count(1) from smbms_user
+        <where>
+            <if test="userName!=null and ''!=userName">
+                 and userName like concat ('%',#{userName},'%')
+            </if>
+        </where>
+    </select>
+<!--分页查询user集合-->
+    <select id="selectAllUserByPage" resultType="smbms_User">
+        SELECT * from smbms_user
+        <where>
+            <if test="user.userName!=null and ''!=user.userName">
+                 and userName like concat ('%',#{user.userName},'%')
+            </if>
+        </where>
+        limit #{pageIndex} ,#{pageSize}
+    </select>
+    <!--增加 方法-->
+    <insert id="addUser">
+            INSERT into smbms_user(userCode,userName,userPassword,gender,birthday,phone,address,userType,createdBy,creationDate)
+        values(#{userCode},#{userName},#{userPassword},#{gender},#{birthday},#{phone},#{address},#{userType},#{createdBy},#{creationDate})
+</insert>
+    <!--修改的方法-->
+    <update id="updateUser">
+       UPDATE smbms_user set userCode=#{userCode},userName=#{userName},userPassword=#{userPassword},
+        gender=#{gender},birthday=#{birthday},phone=#{phone},address=#{address},userType=#{userType},modifyBy=#{modifyBy},modifyDate=#{modifyDate}
+        WHERE  id=#{id}
+    </update>
+    <!--删除方法-->
+    <delete id="delUser">
+        DELETE from smbms_user where id=#{id}
+    </delete>
+</mapper>

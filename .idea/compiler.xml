@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ssm-news" />
+        <module name="ssm-smbms" />
+        <module name="tms" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ssm-news" target="1.5" />
+      <module name="ssm-smbms" target="1.5" />
+      <module name="ssm-supermarket" target="1.5" />
+      <module name="ssm-test" target="1.5" />
+      <module name="tms" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
